@@ -262,7 +262,6 @@ source setup.sh
 
 - Start server by running
 
-
 ```bash
 flask run
 ```
