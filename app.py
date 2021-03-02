@@ -2,6 +2,8 @@ import os
 from flask import Flask, request, jsonify, abort
 from models import setup_db, Movie, Actor
 from sqlalchemy import exc
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 import json
 from auth import AuthError, requires_auth
 from flask_cors import CORS
@@ -13,6 +15,8 @@ def create_app(test_config=None):
     app = Flask(__name__)
     setup_db(app)
     CORS(app)
+    db = SQLAlchemy(app)
+    migrate = Migrate(app, db)
 
     @app.after_request
     def after_request(response):
