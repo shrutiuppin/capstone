@@ -11,6 +11,7 @@ CASTING_ASSISTANT = ('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjgxVE1fMzF1VE
 CASTING_DIRECTOR = ('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjgxVE1fMzF1VEczemJMbnBKTlpDNCJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3Blci1mc3dkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZmU2MDI5YTc4MjM4YjAwNzE5NmI0OGIiLCJhdWQiOiJpbWFnZSIsImlhdCI6MTYxNDY5MDY5MSwiZXhwIjoxNjE0Nzc3MDkxLCJhenAiOiI4UzVjVDFNZ0wyYTd1SkI3dnBQRGwwd3c1cDMybkh5SyIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6ZHJpbmtzLWRldGFpbCIsImdldDppbWFnZXMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmltYWdlcyJdfQ.IeQAS5Dmqt1hSkEv5u1E90tF3pREkQB0Q_bl0lq_FzvlrV_PGha0e4YdIK8s7OTh3bt-8NpD7rqfPw_dt6Gc8VhjoXBrJJmoNvYR4jl-Qo5kmXaaYTyAIACDeEf49IIHqF9NS9j2e7Kod_StJVefLCPqnwtFtEj2soEGJe2uevWF6qc4qpWQXdqLMkgCoY9f_QrMdEl22rA-MVJJEKfO0WeVpwJJHMwwQYVVVawh_Ta1ZkndaGZlIcCguDPE2bRUfKk1FQMYlJ5ScGwytlSsY6ZdMYUpICLiSJH2F35wFZ8_Fy6bILe_lSlIDSkReNNSA5BgH8aHIZ2OY0FBZ84-Ng')  
 EXECUTIVE_PRODUCER = ('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjgxVE1fMzF1VEczemJMbnBKTlpDNCJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3Blci1mc3dkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MDBmZmM4YjlkYmQxYTAwNjhmMDEzMzAiLCJhdWQiOiJpbWFnZSIsImlhdCI6MTYxNDY5MDc0NiwiZXhwIjoxNjE0Nzc3MTQ2LCJhenAiOiI4UzVjVDFNZ0wyYTd1SkI3dnBQRGwwd3c1cDMybkh5SyIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpkcmlua3MiLCJkZWxldGU6bW92aWVzIiwiZ2V0OmFjdG9ycyIsImdldDpkcmlua3MtZGV0YWlsIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmRyaW5rcyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDpkcmlua3MiLCJwb3N0Om1vdmllcyJdfQ.KWaGvSLydLXdLUZGJ1DbwWfQys9lknzbpAl2WjFV2S0qWl-3mqW87rgolRSiERqm24nbs_L7g4pZPAz5SkxjR7rb8KQaN1Es4hNFDz1R3B0wsTS4id9Ou4z874ttxe1yPY_UglTIBZqvcEPk7_c0pGd1ziq5hqSgb73L8o1bGVmrnAXSIL6-p38dAs2tJ9jU7ULFZ3nUoN8cse-UcUT6s5U67kAO67w6rK_46AHpSbDfvhrt0T0MRLg2FSm66YBRcEXKcjp_IL7CkA58CvvS0Dp2h0ti6K8DixgWhdesMyAAq4cTQ_ooHEpnLRnKodyiiE6NCcO0vturyI9Bf02j0A')  
 
+
 class CastingAgencyTest(unittest.TestCase):
     """Setup test suite for the routes"""
 
@@ -42,7 +43,7 @@ class CastingAgencyTest(unittest.TestCase):
         self.assertEqual(data['success'], True)
         self.assertTrue(data['movies'])
 
-    #Test to get a specific movie
+    # Test to get a specific movie
     def test_get_movie_by_id(self):
         response = self.client().get(
             '/movies/1',
@@ -116,7 +117,6 @@ class CastingAgencyTest(unittest.TestCase):
         self.assertEqual(data['success'], True)
         self.assertTrue(data['movie'])
         self.assertEqual(data['movie']['title'], 'title')
-
 
     # # Test that 400 is returned if no data is sent to update a movie
     def test_400_patch_movie(self):

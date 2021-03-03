@@ -3,7 +3,7 @@
 Site live at : [https://capstone-casting-fsnd.herokuapp.com/](https://capstone-casting-fsnd.herokuapp.com/)
 
 Capstone project for Udacity's Fullstack Nanodegree program.
-Authorized users can interact with the API to view,add,update,delete Movies and Actors details.
+Authorized users can interact with the API to view,add,update,delete Movies and Actors details. The motication behind this project is to gain knowledge about full stack 
 
 ### Endpoints
 
@@ -266,6 +266,48 @@ source setup.sh
 flask run
 ```
 
+### Key Dependencies
+
+- [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+
+- [SQLAlchemy](https://www.sqlalchemy.org/) is the Python SQL toolkit and ORM we'll use handle the lightweight sqlite database. You'll primarily work in app.py and can reference models.py.
+
+- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross origin requests from our frontend server.
+
+- [Pycodestyle](https://pypi.org/project/pycodestyle/) - pycodestyle is a tool to check your Python code against some of the style conventions in PEP 8.
+
+### Hosting
+- Getting Started on Heroku
+```
+brew tap heroku/brew && brew install heroku
+```
+
+```
+pip install gunicorn
+pip install flask_script
+pip install flask_migrate
+pip install psycopg2-binary
+```
+- Create Heroku app
+```
+heroku create name_of_your_app
+```
+- Add git remote for Heroku to local repository
+```
+git remote add heroku heroku_git_url.
+```
+- Add postgresql add on for our database
+```
+heroku addons:create heroku-postgresql:hobby-dev --app name_of_your_application
+```
+- Push it!
+```
+git push heroku master
+```
+- Run migrations
+```
+heroku run python manage.py db upgrade --app name_of_your_application
+```
 
 ## Testing
 

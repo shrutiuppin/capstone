@@ -225,7 +225,7 @@ def create_app(test_config=None):
             db.session.rollback()
             abort(500)
 
-      # Error Handling
+    # Error Handling
     @app.errorhandler(422)
     def unprocessable(error):
         return jsonify({
